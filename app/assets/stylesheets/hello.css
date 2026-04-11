@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
 }
 
 code {
@@ -22,7 +24,7 @@ code {
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: rgba(40, 44, 52, 0.8);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,10 +32,24 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .App-link {
-  color: #61dafb;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.App-link:hover {
+  background-color: #21a3c4;
 }
 
 .heart {
@@ -42,4 +58,5 @@ code {
 
 .small {
   font-size: 0.75rem;
+  margin-top: 10px;
 }
