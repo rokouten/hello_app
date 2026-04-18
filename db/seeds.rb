@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+User.create!(name: "Michael Hartl", email: "michael@example.com")
+User.create!(name: "Sterling Archer", email: "duchess@example.gov")
+
+User.all.each do |user|
+  3.times do |n|
+	user.microposts.create!(content: "Post #{n + 1} from #{user.name}")
+  end
+end
+

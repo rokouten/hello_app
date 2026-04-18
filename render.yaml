@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: hello-app
+    env: ruby
+    plan: free
+    buildCommand: bundle install; bundle exec rails assets:precompile; bundle exec rails assets:clean
+    releaseCommand: bundle exec rails db:migrate
+    startCommand: bundle exec puma -C config/puma.rb
+    envVars:
+      - key: RAILS_ENV
+        value: production
+      - key: RACK_ENV
+        value: production
+      - key: RAILS_LOG_TO_STDOUT
+        value: "1"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "1"
+      - key: SQLITE3_DATABASE
+        value: /var/data/production.sqlite3
+      - key: RAILS_MASTER_KEY
+        sync: false
+    disk:
+      name: sqlite
+      mountPath: /var/data
+      sizeGB: 1
+
